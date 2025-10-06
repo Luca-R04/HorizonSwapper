@@ -1,0 +1,35 @@
+# Visual Studio & .NET defaults
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+.vs/
+
+# Rider / JetBrains IDE
+.idea/
+
+# NuGet packages
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# VS Code
+.vscode/
+
+# System files
+Thumbs.db
+Desktop.ini
+
+# Dotnet publish folder
+publish/
+
+# User-specific config
+config.json
