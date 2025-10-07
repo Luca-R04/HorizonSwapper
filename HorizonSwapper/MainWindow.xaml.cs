@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using HorizonSwapper.ViewModels;
+using Microsoft.Win32;
 using System.ComponentModel;
 using System.Windows;
 
