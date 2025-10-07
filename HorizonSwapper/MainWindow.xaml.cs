@@ -1,6 +1,8 @@
-﻿using HorizonSwapper.ViewModels;
+﻿using HorizonSwapper.Services;
+using HorizonSwapper.ViewModels;
 using Microsoft.Win32;
 using System.ComponentModel;
+using System.IO;
 using System.Windows;
 
 namespace HorizonSwapper
@@ -31,10 +33,27 @@ namespace HorizonSwapper
 
                 if (folderDialog.ShowDialog() == true)
                 {
-                    viewModel.SelectedFolderPath = folderDialog.FolderName;
+                    string selectedPath = folderDialog.FolderName;
+                    string exePath = System.IO.Path.Combine(selectedPath, "HorizonForbiddenWest.exe");
+
+                    // ✅ Check if the .exe exists
+                    if (!System.IO.File.Exists(exePath))
+                    {
+                        MessageBox.Show(
+                            "The selected folder does not contain 'HorizonForbiddenWest.exe'.\n\nPlease select the correct game installation directory.",
+                            "Invalid Directory",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Error
+                        );
+                        return; // stop here
+                    }
+
+                    // ✅ Passed the check — set the folder path
+                    viewModel.SelectedFolderPath = selectedPath;
                 }
             }
         }
+
         private void ClearButton_Click(object sender, RoutedEventArgs e)
         {
             if (DataContext is MainViewModel viewModel)
@@ -50,25 +69,45 @@ namespace HorizonSwapper
         {
             if (DataContext is MainViewModel viewModel)
             {
-                // Check if a character is selected
                 var c = viewModel.SelectedCharacter;
+
+                // ✅ Character validation
                 if (c == null)
                 {
-                    MessageBox.Show("No character selected.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("No character selected.", "Info", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
 
-                // Check if a folder path is selected
+                // ✅ Directory validation
                 if (string.IsNullOrEmpty(viewModel.SelectedFolderPath))
                 {
-                    MessageBox.Show("No game directory selected.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("No game directory selected.", "Info", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
 
-                // Show character details
+                string exePath = Path.Combine(viewModel.SelectedFolderPath, "HorizonForbiddenWest.exe");
+                if (!File.Exists(exePath))
+                {
+                    MessageBox.Show(
+                        "The selected folder does not contain HorizonForbiddenWest.exe.\nPlease select a valid game folder.",
+                        "Invalid Directory",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error
+                    );
+                    return;
+                }
+
+                // ✅ Write the .ini file using the service
+                CharacterOverrideService.WriteCharacterOverride(
+                    viewModel.SelectedFolderPath,
+                    c.OriginalRootUUID,
+                    c.VariantUUID
+                );
+
+                // ✅ Confirmation message
                 MessageBox.Show(
-                    $"Name: {c.Name}\nOriginalRootUUID: {c.OriginalRootUUID}\nVariantUUID: {c.VariantUUID}\nSelected Folder: {viewModel.SelectedFolderPath}",
-                    "Selected Character",
+                    $"Character override saved successfully!\n\nName: {c.Name}\nRootUUID: {c.OriginalRootUUID}\nVariantUUID: {c.VariantUUID}",
+                    "Character Activated",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information
                 );
