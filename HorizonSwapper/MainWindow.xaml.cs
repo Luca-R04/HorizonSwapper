@@ -119,9 +119,12 @@ namespace HorizonSwapper
             if (DataContext is MainViewModel viewModel)
             {
                 viewModel.SelectedCharacter = null;
+
+                // 🧹 Remove the HorizonSwapper.ini file if it exists
+                HorizonSwapper.Services.CharacterOverrideService.RemoveCharacterOverrideFile(viewModel.SelectedFolderPath);
+
                 MessageBox.Show("Selection has been reset.", "Reset", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-
     }
 }

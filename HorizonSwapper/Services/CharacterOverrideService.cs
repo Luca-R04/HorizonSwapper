@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Windows;
 
 namespace HorizonSwapper.Services
 {
@@ -34,10 +35,35 @@ VariantUUID = ""{variantUUID}""";
             {
                 // Handle any write errors gracefully
                 System.Windows.MessageBox.Show(
-                    $"Failed to write HorizonSwapper.ini:\n{ex.Message}",
+                    $"Failed to create character swap:\n{ex.Message}",
                     "File Write Error",
                     System.Windows.MessageBoxButton.OK,
                     System.Windows.MessageBoxImage.Error
+                );
+            }
+        }
+
+        public static void RemoveCharacterOverrideFile(string gameDirectory)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(gameDirectory))
+                    return;
+
+                string iniPath = Path.Combine(gameDirectory, IniFileName);
+
+                if (File.Exists(iniPath))
+                {
+                    File.Delete(iniPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Failed to remove character swap:\n{ex.Message}",
+                    "File Delete Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
                 );
             }
         }
