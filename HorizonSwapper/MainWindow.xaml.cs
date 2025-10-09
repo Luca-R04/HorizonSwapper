@@ -2,6 +2,7 @@
 using HorizonSwapper.ViewModels;
 using Microsoft.Win32;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 
@@ -124,6 +125,41 @@ namespace HorizonSwapper
                 HorizonSwapper.Services.CharacterOverrideService.RemoveCharacterOverrideFile(viewModel.SelectedFolderPath);
 
                 MessageBox.Show("Selection has been reset.", "Reset", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void LaunchGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is MainViewModel viewModel)
+            {
+                if (string.IsNullOrEmpty(viewModel.SelectedFolderPath))
+                {
+                    MessageBox.Show("No game directory selected.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                string exePath = Path.Combine(viewModel.SelectedFolderPath, "HorizonForbiddenWest.exe");
+
+                if (!File.Exists(exePath))
+                {
+                    MessageBox.Show("Game executable not found in the selected directory.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                try
+                {
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = exePath,
+                        Arguments = "-nolauncher",
+                        WorkingDirectory = viewModel.SelectedFolderPath,
+                        UseShellExecute = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to launch game: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }
