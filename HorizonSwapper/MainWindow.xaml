@@ -26,72 +26,84 @@
         CornerRadius="8">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="6*" />
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
+
+
+            <StackPanel
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Margin="5,5,5,5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <!--  Launch button  -->
+                        <ColumnDefinition Width="10" />
+                        <!--  Spacer  -->
+                        <ColumnDefinition Width="Auto" />
+                        <!--  Skip launcher toggle  -->
+                        <ColumnDefinition Width="*" />
+                        <!--  Filler  -->
+                    </Grid.ColumnDefinitions>
+
+                    <!--  Launch Game button  -->
+                    <Button
+                        Width="150"
+                        Height="30"
+                        HorizontalAlignment="Left"
+                        Background="#FF2196F3"
+                        BorderBrush="#FF1976D2"
+                        Click="LaunchGameButton_Click"
+                        Content="Launch Game"
+                        FontWeight="SemiBold"
+                        Foreground="White"
+                        IsEnabled="{Binding IsPathSelected}" />
+
+                    <!--  Skip Launcher checkbox  -->
+                    <CheckBox
+                        Grid.Column="2"
+                        VerticalAlignment="Center"
+                        Content="Skip Launcher"
+                        Foreground="White"
+                        IsChecked="{Binding SkipLauncher, Mode=TwoWay}" />
+                </Grid>
+            </StackPanel>
+
+
             <!--  Scrollable Character List  -->
             <Border
+                Grid.Row="1"
                 Grid.Column="0"
-                Margin="5"
+                Margin="5,4,5,5"
                 Background="#FF2E2E2E"
                 BorderBrush="#FF515151"
                 BorderThickness="1"
                 CornerRadius="4">
 
                 <ListBox
+                    Margin="5"
                     Background="Transparent"
                     BorderThickness="0"
+                    ItemContainerStyle="{StaticResource CharacterListItemStyle}"
                     ItemsSource="{Binding Characters}"
+                    MouseDoubleClick="ActivateButton_Click"
                     ScrollViewer.VerticalScrollBarVisibility="Auto"
                     SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}">
 
-                    <ListBox.ItemContainerStyle>
-                        <Style TargetType="ListBoxItem">
-                            <Setter Property="Background" Value="Transparent" />
-                            <Setter Property="Foreground" Value="White" />
-                            <Setter Property="Padding" Value="5" />
-                            <Setter Property="Margin" Value="2" />
-                            <Setter Property="HorizontalContentAlignment" Value="Left" />
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="ListBoxItem">
-                                        <Border
-                                            x:Name="Border"
-                                            Background="{TemplateBinding Background}"
-                                            BorderBrush="{TemplateBinding BorderBrush}"
-                                            BorderThickness="1"
-                                            CornerRadius="3">
-                                            <ContentPresenter
-                                                Margin="2"
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <!--  Hover effect  -->
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="Border" Property="Background" Value="#FF3A3A3A" />
-                                            </Trigger>
-                                            <!--  Selected effect  -->
-                                            <Trigger Property="IsSelected" Value="True">
-                                                <Setter TargetName="Border" Property="Background" Value="#FF2196F3" />
-                                                <Setter Property="Foreground" Value="White" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </ListBox.ItemContainerStyle>
-
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock
+                                Margin="3"
+                                FontSize="14"
+                                Text="{Binding Name}" />
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -99,17 +111,22 @@
 
             <!--  Image Preview Area  -->
             <Border
+                Grid.Row="1"
                 Grid.Column="1"
-                Margin="5"
+                Margin="5,4,5,5"
                 Background="#FF3A3A3A"
                 BorderBrush="#FF515151"
                 BorderThickness="1"
+                ClipToBounds="True"
                 CornerRadius="5">
                 <Grid>
                     <!--  Actual image  -->
                     <Image
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
                         Source="{Binding SelectedCharacter.ImagePath}"
-                        Stretch="UniformToFill"
+                        Stretch="Uniform"
+                        StretchDirection="DownOnly"
                         Visibility="{Binding SelectedCharacter.ImagePath, Converter={StaticResource NullToVisibilityConverter}}" />
 
                     <!--  Placeholder text  -->
@@ -123,11 +140,12 @@
                 </Grid>
             </Border>
 
+
             <!--  Bottom Buttons and Selected Path  -->
             <StackPanel
-                Grid.Row="1"
+                Grid.Row="2"
                 Grid.ColumnSpan="2"
-                Margin="5">
+                Margin="5,5,5,5">
                 <!--  Buttons Row using Grid  -->
                 <Grid>
                     <Grid.ColumnDefinitions>
