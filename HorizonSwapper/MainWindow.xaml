@@ -4,13 +4,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:conv="clr-namespace:HorizonSwapper.Converters"
     Title="HorizonSwapper"
-    Width="700"
-    Height="500"
+    Width="750"
+    Height="800"
     Background="#FF1E1E1E">
 
     <Window.Resources>
         <conv:ObjectToBooleanConverter x:Key="ObjectToBooleanConverter" />
         <conv:SelectedFolderTextConverter x:Key="SelectedFolderTextConverter" />
+        <conv:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+        <conv:InverseNullToVisibilityConverter x:Key="InverseNullToVisibilityConverter" />
         <BooleanToVisibilityConverter x:Key="BoolToVis" />
     </Window.Resources>
 
@@ -103,12 +105,22 @@
                 BorderBrush="#FF515151"
                 BorderThickness="1"
                 CornerRadius="5">
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontWeight="Bold"
-                    Foreground="White"
-                    Text="IMAGE" />
+                <Grid>
+                    <!--  Actual image  -->
+                    <Image
+                        Source="{Binding SelectedCharacter.ImagePath}"
+                        Stretch="UniformToFill"
+                        Visibility="{Binding SelectedCharacter.ImagePath, Converter={StaticResource NullToVisibilityConverter}}" />
+
+                    <!--  Placeholder text  -->
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        Text="NO CHARACTER SELECTED"
+                        Visibility="{Binding SelectedCharacter.ImagePath, Converter={StaticResource InverseNullToVisibilityConverter}}" />
+                </Grid>
             </Border>
 
             <!--  Bottom Buttons and Selected Path  -->

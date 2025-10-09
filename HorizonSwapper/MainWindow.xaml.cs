@@ -69,10 +69,10 @@ namespace HorizonSwapper
         {
             if (DataContext is MainViewModel viewModel)
             {
-                var c = viewModel.SelectedCharacter;
+                var character = viewModel.SelectedCharacter;
 
                 // ✅ Character validation
-                if (c == null)
+                if (character == null)
                 {
                     MessageBox.Show("No character selected.", "Info", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
@@ -100,13 +100,13 @@ namespace HorizonSwapper
                 // ✅ Write the .ini file using the service
                 CharacterOverrideService.WriteCharacterOverride(
                     viewModel.SelectedFolderPath,
-                    c.OriginalRootUUID,
-                    c.VariantUUID
+                    character.OriginalRootUUID,
+                    character.VariantUUID
                 );
 
                 // ✅ Confirmation message
                 MessageBox.Show(
-                    $"Character override saved successfully!\n\nName: {c.Name}\nRootUUID: {c.OriginalRootUUID}\nVariantUUID: {c.VariantUUID}",
+                    $"Character override saved successfully!\n\nName: {character.Name}\nRootUUID: {character.OriginalRootUUID}\nVariantUUID: {character.VariantUUID}",
                     "Character Activated",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information
