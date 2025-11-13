@@ -61,6 +61,7 @@
     <None Remove="Data\Images\Characters\Gerard.jpg" />
     <None Remove="Data\Images\Characters\Gerrah.jpg" />
     <None Remove="Data\Images\Characters\hekarro.jpg" />
+    <None Remove="Data\Images\Characters\Seyka.jpg" />
     <None Remove="Data\Images\Characters\varl.jpg" />
   </ItemGroup>
 
@@ -219,6 +220,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Images\Characters\hekarro.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Seyka.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Images\Characters\varl.jpg">

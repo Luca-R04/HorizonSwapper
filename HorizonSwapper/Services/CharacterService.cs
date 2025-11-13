@@ -40,8 +40,19 @@ namespace HorizonSwapper.Services
                 }
             }
 
-            return characters;
+            List<Character> sortedCharacters = GetSortedCharacters(characters);
+
+            return sortedCharacters;
         }
+
+        private List<Character> GetSortedCharacters(List<Character> characters)
+        {
+            return characters
+                .Where(c => !string.IsNullOrWhiteSpace(c.Name))
+                .OrderBy(c => c.Name)
+                .ToList();
+        }
+
 
         public IEnumerable<Character> FilterCharactersWithVariant()
         {
