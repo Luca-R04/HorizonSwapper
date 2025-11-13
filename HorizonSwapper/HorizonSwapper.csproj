@@ -10,22 +10,218 @@
 
   <ItemGroup>
     <None Remove="Data\Characters.json" />
+    <None Remove="Data\Images\Characters\Abadund.jpg" />
+    <None Remove="Data\Images\Characters\Aldur.jpg" />
+    <None Remove="Data\Images\Characters\Aluf.jpg" />
+    <None Remove="Data\Images\Characters\Alva.jpg" />
+    <None Remove="Data\Images\Characters\Amadis.jpg" />
+    <None Remove="Data\Images\Characters\Areus.jpg" />
+    <None Remove="Data\Images\Characters\Arnuf.jpg" />
+    <None Remove="Data\Images\Characters\Arokkeh.jpg" />
+    <None Remove="Data\Images\Characters\Arorro.jpg" />
+    <None Remove="Data\Images\Characters\Asera.jpg" />
+    <None Remove="Data\Images\Characters\Atekka.jpg" />
+    <None Remove="Data\Images\Characters\Attah.jpg" />
+    <None Remove="Data\Images\Characters\Avad.jpg" />
+    <None Remove="Data\Images\Characters\Belna.jpg" />
+    <None Remove="Data\Images\Characters\Beta Hologram.jpg" />
+    <None Remove="Data\Images\Characters\Beta.jpg" />
+    <None Remove="Data\Images\Characters\Bohai.jpg" />
+    <None Remove="Data\Images\Characters\Boomer.jpg" />
+    <None Remove="Data\Images\Characters\Bree.jpg" />
+    <None Remove="Data\Images\Characters\Ceo 1.jpg" />
+    <None Remove="Data\Images\Characters\Ceo 2.jpg" />
+    <None Remove="Data\Images\Characters\Conover 1.jpg" />
+    <None Remove="Data\Images\Characters\Conover 2.jpg" />
+    <None Remove="Data\Images\Characters\Corend.jpg" />
+    <None Remove="Data\Images\Characters\Cragella.jpg" />
+    <None Remove="Data\Images\Characters\Daen.jpg" />
+    <None Remove="Data\Images\Characters\Danur.jpg" />
+    <None Remove="Data\Images\Characters\Darikka.jpg" />
+    <None Remove="Data\Images\Characters\Dekka.jpg" />
+    <None Remove="Data\Images\Characters\Delah.jpg" />
+    <None Remove="Data\Images\Characters\Dorund.jpg" />
+    <None Remove="Data\Images\Characters\Drakka 1.jpg" />
+    <None Remove="Data\Images\Characters\Drakka 4.jpg" />
+    <None Remove="Data\Images\Characters\Dukkah.jpg" />
+    <None Remove="Data\Images\Characters\Elottak.jpg" />
+    <None Remove="Data\Images\Characters\Emboh.jpg" />
+    <None Remove="Data\Images\Characters\Erayyo.jpg" />
+    <None Remove="Data\Images\Characters\Erend.jpg" />
+    <None Remove="Data\Images\Characters\Erik 1.jpg" />
+    <None Remove="Data\Images\Characters\Erik 2.jpg" />
+    <None Remove="Data\Images\Characters\Fane.jpg" />
+    <None Remove="Data\Images\Characters\Fendur.jpg" />
+    <None Remove="Data\Images\Characters\Fenirra.jpg" />
+    <None Remove="Data\Images\Characters\Fikatta.jpg" />
+    <None Remove="Data\Images\Characters\Gana.jpg" />
+    <None Remove="Data\Images\Characters\Garokkah.jpg" />
+    <None Remove="Data\Images\Characters\Gattak.jpg" />
+    <None Remove="Data\Images\Characters\Gendas.jpg" />
+    <None Remove="Data\Images\Characters\Gerard.jpg" />
+    <None Remove="Data\Images\Characters\Gerrah.jpg" />
     <None Remove="Data\Images\Characters\hekarro.jpg" />
     <None Remove="Data\Images\Characters\varl.jpg" />
-    <None Remove="Data\Variant_IDs.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Data\Characters.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Images\Characters\Abadund.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Aldur.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Aluf.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Alva.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Amadis.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Areus.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Arnuf.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Arokkeh.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Arorro.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Asera.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Atekka.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Attah.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Avad.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Belna.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Beta Hologram.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Beta.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Bohai.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Boomer.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Bree.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Ceo 1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Ceo 2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Conover 1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Conover 2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Corend.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Cragella.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Daen.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Danur.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Darikka.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Dekka.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Delah.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Dorund.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Drakka 1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Drakka 4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Dukkah.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Elottak.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Emboh.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Erayyo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Erend.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Erik 1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Erik 2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Fane.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Fendur.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Fenirra.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Fikatta.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Gana.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Garokkah.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Gattak.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Gendas.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Gerard.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Gerrah.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Images\Characters\hekarro.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Images\Characters\varl.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Variant_IDs.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

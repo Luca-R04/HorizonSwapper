@@ -7,7 +7,6 @@ namespace HorizonSwapper.ViewModels
     public class MainViewModel : INotifyPropertyChanged
     {
         private readonly CharacterService _characterService;
-        private readonly VariantService _variantService;
         private readonly ConfigService _configService;
 
         public ObservableCollection<Character> Characters { get; } = new();
@@ -53,17 +52,13 @@ namespace HorizonSwapper.ViewModels
         public MainViewModel()
         {
             _characterService = new CharacterService();
-            _variantService = new VariantService();
             _configService = new ConfigService();
 
             // Load from disk
             var config = _configService.LoadConfig();
             SelectedFolderPath = config.GameDirectory;
 
-            var characters = _characterService.LoadCharacters();
-            var variants = _variantService.LoadVariants();
-
-            foreach (var c in _characterService.FilterCharactersWithVariant(characters, variants))
+            foreach (var c in _characterService.FilterCharactersWithVariant())
                 Characters.Add(c);
         }
     }

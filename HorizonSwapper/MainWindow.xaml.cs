@@ -101,13 +101,13 @@ namespace HorizonSwapper
                 // ✅ Write the .ini file using the service
                 CharacterOverrideService.WriteCharacterOverride(
                     viewModel.SelectedFolderPath,
-                    character.OriginalRootUUID,
+                    character.RootUUID,
                     character.VariantUUID
                 );
 
                 // ✅ Confirmation message
                 MessageBox.Show(
-                    $"Character override saved successfully!\n\nName: {character.Name}\nRootUUID: {character.OriginalRootUUID}\nVariantUUID: {character.VariantUUID}",
+                    $"Character override saved successfully!\n\nName: {character.Name}\nRootUUID: {character.RootUUID}\nVariantUUID: {character.VariantUUID}",
                     "Character Activated",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information
