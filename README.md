@@ -33,6 +33,8 @@ HorizonSwapper lets you swap character models within the PC version of Horizon: 
 # Important!
 ## It is highly recommended to back up save files before using this tool!
 
+# Installation
+
 ## Requirements  
 - [Nukem's Gameplay Tweaks and Cheat Menu](https://www.nexusmods.com/horizonforbiddenwest/mods/50)
 - Windows 10 or higher (64‑bit)
@@ -44,9 +46,8 @@ HorizonSwapper lets you swap character models within the PC version of Horizon: 
 - Download HorizonSwapper from either [Nexus Mods]() or the [Releases](https://github.com/Luca-R04/HorizonSwapper/releases) tab.
 - Extract the zip.
 
-## UNINSTALLING
+## Uninstalling
 To remove the swapped character, press the RESET button in HorizonSwapper. Another possibility is to go into the game directory and manually delete mod_HorizonSwapper.ini.
-
 The tool itself is a portable install, so simply deleting the folder will remove all of it.
 
 ## Usage
@@ -54,3 +55,7 @@ The tool itself is a portable install, so simply deleting the folder will remove
 - Select a game directory.
 - Select a character.
 - Launch the game.
+
+
+**CREDITS**
+Big thanks Nukem for the Gameplay Tweaks and Cheat Menu!
