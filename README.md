@@ -57,5 +57,5 @@ The tool itself is a portable install, so simply deleting the folder will remove
 - Launch the game.
 
 
-**CREDITS**
+## CREDITS
 Big thanks Nukem for the Gameplay Tweaks and Cheat Menu!
