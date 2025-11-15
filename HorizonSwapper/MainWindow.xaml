@@ -44,21 +44,67 @@
                 Margin="5,5,5,5">
                 <Grid>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <!--  Search bar  -->
+                        <ColumnDefinition Width="10" />
+                        <!--  Spacer  -->
                         <ColumnDefinition Width="Auto" />
                         <!--  Launch button  -->
                         <ColumnDefinition Width="10" />
                         <!--  Spacer  -->
                         <ColumnDefinition Width="Auto" />
-                        <!--  Skip launcher toggle  -->
-                        <ColumnDefinition Width="*" />
-                        <!--  Filler  -->
+                        <!--  Skip launcher checkbox  -->
                     </Grid.ColumnDefinitions>
+
+                    <!--  Rounded Search bar  -->
+                    <!--  Search bar with clear button  -->
+                    <Grid
+                        Grid.Column="0"
+                        Height="30"
+                        VerticalAlignment="Center">
+                        <!--  Rounded border  -->
+                        <Border
+                            Background="#FF3A3A3A"
+                            BorderBrush="#FF515151"
+                            BorderThickness="1"
+                            CornerRadius="6">
+                            <TextBox
+                                x:Name="SearchBox"
+                                Padding="6,0,25,0"
+                                HorizontalContentAlignment="Left"
+                                VerticalContentAlignment="Center"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                FontSize="14"
+                                Foreground="White"
+                                Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+                        </Border>
+
+                        <!--  Clear button  -->
+                        <Button
+                            Width="20"
+                            Height="20"
+                            Margin="0,0,5,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Background="#FF515151"
+                            BorderBrush="#FF515151"
+                            BorderThickness="1"
+                            Click="ClearSearchButton_Click"
+                            Content="✕"
+                            Cursor="Hand"
+                            FontSize="12"
+                            Foreground="White"
+                            ToolTip="Clear search" />
+                    </Grid>
+
 
                     <!--  Launch Game button  -->
                     <Button
+                        Grid.Column="2"
                         Width="150"
                         Height="30"
-                        HorizontalAlignment="Left"
+                        HorizontalAlignment="Right"
                         Background="#FF2196F3"
                         BorderBrush="#FF1976D2"
                         Click="LaunchGameButton_Click"
@@ -69,12 +115,14 @@
 
                     <!--  Skip Launcher checkbox  -->
                     <CheckBox
-                        Grid.Column="2"
+                        Grid.Column="4"
                         VerticalAlignment="Center"
                         Content="Skip Launcher"
                         Foreground="White"
                         IsChecked="{Binding SkipLauncher, Mode=TwoWay}" />
                 </Grid>
+
+
             </StackPanel>
 
 

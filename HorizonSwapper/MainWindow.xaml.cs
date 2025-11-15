@@ -162,5 +162,14 @@ namespace HorizonSwapper
                 }
             }
         }
+
+        private void ClearSearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is MainViewModel vm)
+            {
+                vm.SearchText = string.Empty;
+            }
+        }
+
     }
 }

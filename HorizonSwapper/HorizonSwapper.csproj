@@ -159,6 +159,7 @@
     <None Remove="Data\Images\Characters\Ragurt.jpg" />
     <None Remove="Data\Images\Characters\Rakkar.jpg" />
     <None Remove="Data\Images\Characters\Raynah.jpg" />
+    <None Remove="Data\Images\Characters\Regalla No Armor.jpg" />
     <None Remove="Data\Images\Characters\Regalla.jpg" />
     <None Remove="Data\Images\Characters\Revikka.jpg" />
     <None Remove="Data\Images\Characters\Rheng.jpg" />
@@ -201,6 +202,7 @@
     <None Remove="Data\Images\Characters\Valea.jpg" />
     <None Remove="Data\Images\Characters\Valgend.jpg" />
     <None Remove="Data\Images\Characters\Vanasha.jpg" />
+    <None Remove="Data\Images\Characters\Varl Beard.jpg" />
     <None Remove="Data\Images\Characters\varl.jpg" />
     <None Remove="Data\Images\Characters\Ven.jpg" />
     <None Remove="Data\Images\Characters\Verbena.jpg" />
@@ -681,6 +683,9 @@
     <Content Include="Data\Images\Characters\Raynah.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Images\Characters\Regalla No Armor.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\Images\Characters\Regalla.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -805,6 +810,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Images\Characters\Vanasha.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Images\Characters\Varl Beard.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Images\Characters\varl.jpg">

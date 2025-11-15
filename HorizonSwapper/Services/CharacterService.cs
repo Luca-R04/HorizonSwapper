@@ -7,8 +7,16 @@ namespace HorizonSwapper.Services
     {
         private readonly string _path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "Characters.json");
 
+        private List<Character>? _allCharactersCache;
+
+        /// <summary>
+        /// Load all characters from disk (with caching)
+        /// </summary>
         public List<Character> LoadCharacters()
         {
+            if (_allCharactersCache != null)
+                return _allCharactersCache;
+
             if (!File.Exists(_path))
                 throw new FileNotFoundException($"Characters file not found: {_path}");
 
@@ -40,9 +48,8 @@ namespace HorizonSwapper.Services
                 }
             }
 
-            List<Character> sortedCharacters = GetSortedCharacters(characters);
-
-            return sortedCharacters;
+            _allCharactersCache = GetSortedCharacters(characters);
+            return _allCharactersCache;
         }
 
         private List<Character> GetSortedCharacters(List<Character> characters)
@@ -53,12 +60,27 @@ namespace HorizonSwapper.Services
                 .ToList();
         }
 
-
+        /// <summary>
+        /// Returns all characters with a variant UUID
+        /// </summary>
         public IEnumerable<Character> FilterCharactersWithVariant()
         {
-            List<Character> characters = this.LoadCharacters();
+            var characters = LoadCharacters();
+            return characters.Where(c => !string.IsNullOrWhiteSpace(c.VariantUUID));
+        }
 
-            return characters.Where(c => c.VariantUUID != null);
+        /// <summary>
+        /// ✅ Search characters by name (case-insensitive) and filter only those with variants
+        /// </summary>
+        public IEnumerable<Character> SearchCharacters(string? searchText)
+        {
+            var characters = FilterCharactersWithVariant();
+
+            if (string.IsNullOrWhiteSpace(searchText))
+                return characters;
+
+            return characters.Where(c =>
+                c.Name.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }

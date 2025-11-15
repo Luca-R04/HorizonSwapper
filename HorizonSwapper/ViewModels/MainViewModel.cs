@@ -61,6 +61,21 @@ namespace HorizonSwapper.ViewModels
             }
         }
 
+        private string _searchText;
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                if (_searchText != value)
+                {
+                    _searchText = value;
+                    OnPropertyChanged(nameof(SearchText));
+                    ApplyFilter();
+                }
+            }
+        }
+
 
         public bool IsNoPathSelected => string.IsNullOrEmpty(SelectedFolderPath);
         public bool IsPathSelected => !IsNoPathSelected;
@@ -90,6 +105,15 @@ namespace HorizonSwapper.ViewModels
                 GameDirectory = SelectedFolderPath,
                 SkipLauncher = SkipLauncher
             });
+        }
+
+        private void ApplyFilter()
+        {
+            Characters.Clear();
+            var filtered = _characterService.SearchCharacters(SearchText);
+
+            foreach (var c in filtered)
+                Characters.Add(c);
         }
 
     }
