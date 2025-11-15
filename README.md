@@ -21,6 +21,7 @@ HorizonSwapper lets you swap character models within the PC version of Horizon: 
 ## Requirements  
 - [Nukem's Gameplay Tweaks and Cheat Menu](https://www.nexusmods.com/horizonforbiddenwest/mods/50)
 - Windows 10 or higher (64‑bit)
+- .Net 8 installed.
 - Horizon: Forbidden West installed
 
 ## Installation
