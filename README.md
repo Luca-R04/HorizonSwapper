@@ -44,6 +44,11 @@ HorizonSwapper lets you swap character models within the PC version of Horizon: 
 - Download HorizonSwapper from either [Nexus Mods]() or the [Releases](https://github.com/Luca-R04/HorizonSwapper/releases) tab.
 - Extract the zip.
 
+## UNINSTALLING
+To remove the swapped character, press the RESET button in HorizonSwapper. Another possibility is to go into the game directory and manually delete mod_HorizonSwapper.ini.
+
+The tool itself is a portable install, so simply deleting the folder will remove all of it.
+
 ## Usage
 - Run the .exe.
 - Select a game directory.
