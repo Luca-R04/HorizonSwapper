@@ -1,4 +1,5 @@
-﻿using HorizonSwapper.Services;
+﻿using HorizonSwapper.Domain;
+using HorizonSwapper.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -26,6 +27,8 @@ namespace HorizonSwapper.ViewModels
         }
 
         private string _selectedFolderPath;
+        private bool _skipLauncher;
+
         public string SelectedFolderPath
         {
             get => _selectedFolderPath;
@@ -38,10 +41,26 @@ namespace HorizonSwapper.ViewModels
                     OnPropertyChanged(nameof(IsNoPathSelected));
                     OnPropertyChanged(nameof(IsPathSelected));
 
-                    _configService.SaveConfig(new AppConfig { GameDirectory = value });
+                    SaveConfig();
                 }
             }
         }
+
+        public bool SkipLauncher
+        {
+            get => _skipLauncher;
+            set
+            {
+                if (_skipLauncher != value)
+                {
+                    _skipLauncher = value;
+                    OnPropertyChanged(nameof(SkipLauncher));
+
+                    SaveConfig();
+                }
+            }
+        }
+
 
         public bool IsNoPathSelected => string.IsNullOrEmpty(SelectedFolderPath);
         public bool IsPathSelected => !IsNoPathSelected;
@@ -57,9 +76,21 @@ namespace HorizonSwapper.ViewModels
             // Load from disk
             var config = _configService.LoadConfig();
             SelectedFolderPath = config.GameDirectory;
+            SkipLauncher = config.SkipLauncher;
+
 
             foreach (var c in _characterService.FilterCharactersWithVariant())
                 Characters.Add(c);
         }
+
+        private void SaveConfig()
+        {
+            _configService.SaveConfig(new AppConfig
+            {
+                GameDirectory = SelectedFolderPath,
+                SkipLauncher = SkipLauncher
+            });
+        }
+
     }
 }

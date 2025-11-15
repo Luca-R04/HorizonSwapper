@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using HorizonSwapper.Domain;
+using System.IO;
 using System.Text.Json;
 
 namespace HorizonSwapper.Services
@@ -21,10 +22,5 @@ namespace HorizonSwapper.Services
             string json = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(_configPath, json);
         }
-    }
-
-    public class AppConfig
-    {
-        public string GameDirectory { get; set; }
     }
 }
