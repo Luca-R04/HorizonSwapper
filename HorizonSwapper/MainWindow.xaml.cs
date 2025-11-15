@@ -151,7 +151,7 @@ namespace HorizonSwapper
                     Process.Start(new ProcessStartInfo
                     {
                         FileName = exePath,
-                        Arguments = "-nolauncher",
+                        Arguments = viewModel.SkipLauncher ? "-nolauncher" : "",
                         WorkingDirectory = viewModel.SelectedFolderPath,
                         UseShellExecute = true
                     });

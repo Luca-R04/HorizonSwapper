@@ -6,6 +6,103 @@
     StartupUri="MainWindow.xaml">
     <Application.Resources>
 
+        <Style TargetType="ScrollBar">
+            <Setter Property="Width" Value="8" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Grid Background="Transparent">
+                            <Grid x:Name="VerticalGrid" Visibility="Collapsed">
+                                <Track
+                                    x:Name="PART_Track"
+                                    IsDirectionReversed="True"
+                                    Orientation="Vertical">
+
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Visibility="Collapsed" />
+                                    </Track.DecreaseRepeatButton>
+
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Visibility="Collapsed" />
+                                    </Track.IncreaseRepeatButton>
+
+                                    <Track.Thumb>
+                                        <Thumb>
+                                            <Thumb.Template>
+                                                <ControlTemplate TargetType="Thumb">
+                                                    <Border
+                                                        x:Name="ThumbBorder"
+                                                        Width="8"
+                                                        Background="#444"
+                                                        BorderBrush="#666"
+                                                        BorderThickness="1"
+                                                        CornerRadius="4" />
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="ThumbBorder" Property="Background" Value="#777" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsDragging" Value="True">
+                                                            <Setter TargetName="ThumbBorder" Property="Background" Value="#999" />
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Thumb.Template>
+                                        </Thumb>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+
+                            <Grid x:Name="HorizontalGrid" Visibility="Collapsed">
+                                <Track x:Name="PART_Track_H" Orientation="Horizontal">
+
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Visibility="Collapsed" />
+                                    </Track.DecreaseRepeatButton>
+
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Visibility="Collapsed" />
+                                    </Track.IncreaseRepeatButton>
+
+                                    <Track.Thumb>
+                                        <Thumb>
+                                            <Thumb.Template>
+                                                <ControlTemplate TargetType="Thumb">
+                                                    <Border
+                                                        x:Name="ThumbBorder"
+                                                        Height="8"
+                                                        Background="#444"
+                                                        BorderBrush="#666"
+                                                        BorderThickness="1"
+                                                        CornerRadius="4" />
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="ThumbBorder" Property="Background" Value="#777" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsDragging" Value="True">
+                                                            <Setter TargetName="ThumbBorder" Property="Background" Value="#999" />
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Thumb.Template>
+                                        </Thumb>
+                                    </Track.Thumb>
+                                </Track>
+                            </Grid>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Orientation" Value="Vertical">
+                                <Setter TargetName="VerticalGrid" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="Orientation" Value="Horizontal">
+                                <Setter TargetName="HorizontalGrid" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <!--  Button styles  -->
         <Style TargetType="Button">
             <Setter Property="Background" Value="#FF3A3A3A" />
