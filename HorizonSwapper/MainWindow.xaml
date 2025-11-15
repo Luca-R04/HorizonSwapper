@@ -6,7 +6,8 @@
     Title="HorizonSwapper"
     Width="750"
     Height="800"
-    Background="#FF1E1E1E">
+    Background="#FF1E1E1E"
+    Icon="Assets/AppIcon.ico">
 
     <Window.Resources>
         <conv:ObjectToBooleanConverter x:Key="ObjectToBooleanConverter" />
