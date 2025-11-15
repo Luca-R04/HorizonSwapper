@@ -15,6 +15,21 @@ HorizonSwapper lets you swap character models within the PC version of Horizon: 
 - Preview image of character.
 - Search bar.
 
+### The following characters are still missing:
+- Chekkatah
+- Javveh
+- Kalae
+- Kenirra
+- Mariana
+- Mavas
+- Okka
+- Payiv
+- Sentekka
+- Vintalla
+- Zekotto
+- Zokkah
+- Zikka (Crashes Game)
+  
 # Important!
 ## It is highly recommended to back up save files before using this tool!
 
