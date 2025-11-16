@@ -9,7 +9,6 @@ HorizonSwapper lets you swap character models within the PC version of Horizon: 
 
 ## Features  
 - Character swap functionality.
-- Game installation path detection.
 - Launch game from app.
 - Skip game launcher option.
 - Preview image of character.
