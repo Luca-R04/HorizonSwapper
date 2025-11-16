@@ -42,7 +42,7 @@ HorizonSwapper lets you swap character models within the PC version of Horizon: 
 
 ## Installation
 - Install [Nukem's Gameplay Tweaks and Cheat Menu](https://www.nexusmods.com/horizonforbiddenwest/mods/50).
-- Download HorizonSwapper from either [Nexus Mods]() or the [Releases](https://github.com/Luca-R04/HorizonSwapper/releases) tab.
+- Download HorizonSwapper from either [Nexus Mods](https://www.nexusmods.com/horizonforbiddenwest/mods/154?tab=description) or the [Releases](https://github.com/Luca-R04/HorizonSwapper/releases) tab.
 - Extract the zip.
 
 ## Uninstalling
